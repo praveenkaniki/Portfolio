@@ -11,7 +11,7 @@ import {
   CommonModule,
   DOCUMENT,
   isPlatformBrowser
-} from "./chunk-SCEWNS7V.js";
+} from "./chunk-KGMLFK7B.js";
 import {
   ApplicationRef,
   Component,
@@ -60,10 +60,10 @@ import {
   ɵɵprojection,
   ɵɵprojectionDef,
   ɵɵresolveWindow
-} from "./chunk-DZVXT4KU.js";
+} from "./chunk-XFZICENZ.js";
 
 // node_modules/ngx-bootstrap/focus-trap/fesm2022/ngx-bootstrap-focus-trap.mjs
-var _FocusTrapManager = class _FocusTrapManager {
+var FocusTrapManager = class _FocusTrapManager {
   constructor() {
     this._focusTrapStack = [];
   }
@@ -95,16 +95,19 @@ var _FocusTrapManager = class _FocusTrapManager {
       }
     }
   }
+  static {
+    this.ɵfac = function FocusTrapManager_Factory(t) {
+      return new (t || _FocusTrapManager)();
+    };
+  }
+  static {
+    this.ɵprov = ɵɵdefineInjectable({
+      token: _FocusTrapManager,
+      factory: _FocusTrapManager.ɵfac,
+      providedIn: "root"
+    });
+  }
 };
-_FocusTrapManager.ɵfac = function FocusTrapManager_Factory(t) {
-  return new (t || _FocusTrapManager)();
-};
-_FocusTrapManager.ɵprov = ɵɵdefineInjectable({
-  token: _FocusTrapManager,
-  factory: _FocusTrapManager.ɵfac,
-  providedIn: "root"
-});
-var FocusTrapManager = _FocusTrapManager;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(FocusTrapManager, [{
     type: Injectable,
@@ -119,7 +122,7 @@ try {
 } catch {
   hasV8BreakIterator = false;
 }
-var _Platform = class _Platform {
+var Platform = class _Platform {
   constructor(_platformId) {
     this._platformId = _platformId;
     this.isBrowser = this._platformId ? isPlatformBrowser(this._platformId) : typeof document === "object" && !!document;
@@ -132,16 +135,19 @@ var _Platform = class _Platform {
     this.ANDROID = this.isBrowser && /android/i.test(navigator.userAgent) && !this.TRIDENT;
     this.SAFARI = this.isBrowser && /safari/i.test(navigator.userAgent) && this.WEBKIT;
   }
+  static {
+    this.ɵfac = function Platform_Factory(t) {
+      return new (t || _Platform)(ɵɵinject(PLATFORM_ID));
+    };
+  }
+  static {
+    this.ɵprov = ɵɵdefineInjectable({
+      token: _Platform,
+      factory: _Platform.ɵfac,
+      providedIn: "root"
+    });
+  }
 };
-_Platform.ɵfac = function Platform_Factory(t) {
-  return new (t || _Platform)(ɵɵinject(PLATFORM_ID));
-};
-_Platform.ɵprov = ɵɵdefineInjectable({
-  token: _Platform,
-  factory: _Platform.ɵfac,
-  providedIn: "root"
-});
-var Platform = _Platform;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(Platform, [{
     type: Injectable,
@@ -156,7 +162,7 @@ var Platform = _Platform;
     }]
   }], null);
 })();
-var _InteractivityChecker = class _InteractivityChecker {
+var InteractivityChecker = class _InteractivityChecker {
   constructor(_platform) {
     this._platform = _platform;
   }
@@ -238,16 +244,19 @@ var _InteractivityChecker = class _InteractivityChecker {
   isFocusable(element, config) {
     return isPotentiallyFocusable(element) && !this.isDisabled(element) && (config?.ignoreVisibility || this.isVisible(element));
   }
+  static {
+    this.ɵfac = function InteractivityChecker_Factory(t) {
+      return new (t || _InteractivityChecker)(ɵɵinject(Platform));
+    };
+  }
+  static {
+    this.ɵprov = ɵɵdefineInjectable({
+      token: _InteractivityChecker,
+      factory: _InteractivityChecker.ɵfac,
+      providedIn: "root"
+    });
+  }
 };
-_InteractivityChecker.ɵfac = function InteractivityChecker_Factory(t) {
-  return new (t || _InteractivityChecker)(ɵɵinject(Platform));
-};
-_InteractivityChecker.ɵprov = ɵɵdefineInjectable({
-  token: _InteractivityChecker,
-  factory: _InteractivityChecker.ɵfac,
-  providedIn: "root"
-});
-var InteractivityChecker = _InteractivityChecker;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(InteractivityChecker, [{
     type: Injectable,
@@ -553,7 +562,7 @@ var FocusTrap = class {
     }
   }
 };
-var _FocusTrapFactory = class _FocusTrapFactory {
+var FocusTrapFactory = class _FocusTrapFactory {
   constructor(_checker, _ngZone, _document) {
     this._checker = _checker;
     this._ngZone = _ngZone;
@@ -569,16 +578,19 @@ var _FocusTrapFactory = class _FocusTrapFactory {
   create(element, deferCaptureElements = false) {
     return new FocusTrap(element, this._checker, this._ngZone, this._document, deferCaptureElements);
   }
+  static {
+    this.ɵfac = function FocusTrapFactory_Factory(t) {
+      return new (t || _FocusTrapFactory)(ɵɵinject(InteractivityChecker), ɵɵinject(NgZone), ɵɵinject(DOCUMENT));
+    };
+  }
+  static {
+    this.ɵprov = ɵɵdefineInjectable({
+      token: _FocusTrapFactory,
+      factory: _FocusTrapFactory.ɵfac,
+      providedIn: "root"
+    });
+  }
 };
-_FocusTrapFactory.ɵfac = function FocusTrapFactory_Factory(t) {
-  return new (t || _FocusTrapFactory)(ɵɵinject(InteractivityChecker), ɵɵinject(NgZone), ɵɵinject(DOCUMENT));
-};
-_FocusTrapFactory.ɵprov = ɵɵdefineInjectable({
-  token: _FocusTrapFactory,
-  factory: _FocusTrapFactory.ɵfac,
-  providedIn: "root"
-});
-var FocusTrapFactory = _FocusTrapFactory;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(FocusTrapFactory, [{
     type: Injectable,
@@ -597,7 +609,7 @@ var FocusTrapFactory = _FocusTrapFactory;
     }]
   }], null);
 })();
-var _FocusTrapDirective = class _FocusTrapDirective {
+var FocusTrapDirective = class _FocusTrapDirective {
   /** Whether the focus trap is active. */
   get enabled() {
     return this.focusTrap.enabled;
@@ -651,21 +663,24 @@ var _FocusTrapDirective = class _FocusTrapDirective {
     this._previouslyFocusedElement = this._document.activeElement;
     this.focusTrap.focusInitialElementWhenReady();
   }
+  static {
+    this.ɵfac = function FocusTrapDirective_Factory(t) {
+      return new (t || _FocusTrapDirective)(ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(FocusTrapFactory), ɵɵdirectiveInject(DOCUMENT));
+    };
+  }
+  static {
+    this.ɵdir = ɵɵdefineDirective({
+      type: _FocusTrapDirective,
+      selectors: [["", "focusTrap", ""]],
+      inputs: {
+        enabled: [InputFlags.None, "cdkTrapFocus", "enabled"],
+        autoCapture: [InputFlags.None, "cdkTrapFocusAutoCapture", "autoCapture"]
+      },
+      exportAs: ["focusTrap"],
+      features: [ɵɵNgOnChangesFeature]
+    });
+  }
 };
-_FocusTrapDirective.ɵfac = function FocusTrapDirective_Factory(t) {
-  return new (t || _FocusTrapDirective)(ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(FocusTrapFactory), ɵɵdirectiveInject(DOCUMENT));
-};
-_FocusTrapDirective.ɵdir = ɵɵdefineDirective({
-  type: _FocusTrapDirective,
-  selectors: [["", "focusTrap", ""]],
-  inputs: {
-    enabled: [InputFlags.None, "cdkTrapFocus", "enabled"],
-    autoCapture: [InputFlags.None, "cdkTrapFocusAutoCapture", "autoCapture"]
-  },
-  exportAs: ["focusTrap"],
-  features: [ɵɵNgOnChangesFeature]
-});
-var FocusTrapDirective = _FocusTrapDirective;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(FocusTrapDirective, [{
     type: Directive,
@@ -694,27 +709,32 @@ var FocusTrapDirective = _FocusTrapDirective;
     }]
   });
 })();
-var _FocusTrapModule = class _FocusTrapModule {
+var FocusTrapModule = class _FocusTrapModule {
   static forRoot() {
     return {
       ngModule: _FocusTrapModule,
       providers: [FocusTrapManager, Platform, InteractivityChecker]
     };
   }
+  static {
+    this.ɵfac = function FocusTrapModule_Factory(t) {
+      return new (t || _FocusTrapModule)();
+    };
+  }
+  static {
+    this.ɵmod = ɵɵdefineNgModule({
+      type: _FocusTrapModule,
+      declarations: [FocusTrapDirective],
+      imports: [CommonModule],
+      exports: [FocusTrapDirective]
+    });
+  }
+  static {
+    this.ɵinj = ɵɵdefineInjector({
+      imports: [CommonModule]
+    });
+  }
 };
-_FocusTrapModule.ɵfac = function FocusTrapModule_Factory(t) {
-  return new (t || _FocusTrapModule)();
-};
-_FocusTrapModule.ɵmod = ɵɵdefineNgModule({
-  type: _FocusTrapModule,
-  declarations: [FocusTrapDirective],
-  imports: [CommonModule],
-  exports: [FocusTrapDirective]
-});
-_FocusTrapModule.ɵinj = ɵɵdefineInjector({
-  imports: [CommonModule]
-});
-var FocusTrapModule = _FocusTrapModule;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(FocusTrapModule, [{
     type: NgModule,
@@ -1503,7 +1523,7 @@ function positionElements(hostElement, targetElement, placement, appendToBody, o
   }
   updateContainerClass(data, renderer);
 }
-var _PositioningService = class _PositioningService {
+var PositioningService = class _PositioningService {
   constructor(ngZone, rendererFactory, platformId) {
     this.update$$ = new Subject();
     this.positionElements = /* @__PURE__ */ new Map();
@@ -1550,16 +1570,19 @@ var _PositioningService = class _PositioningService {
   setOptions(options) {
     this.options = options;
   }
+  static {
+    this.ɵfac = function PositioningService_Factory(t) {
+      return new (t || _PositioningService)(ɵɵinject(NgZone), ɵɵinject(RendererFactory2), ɵɵinject(PLATFORM_ID));
+    };
+  }
+  static {
+    this.ɵprov = ɵɵdefineInjectable({
+      token: _PositioningService,
+      factory: _PositioningService.ɵfac,
+      providedIn: "root"
+    });
+  }
 };
-_PositioningService.ɵfac = function PositioningService_Factory(t) {
-  return new (t || _PositioningService)(ɵɵinject(NgZone), ɵɵinject(RendererFactory2), ɵɵinject(PLATFORM_ID));
-};
-_PositioningService.ɵprov = ɵɵdefineInjectable({
-  token: _PositioningService,
-  factory: _PositioningService.ɵfac,
-  providedIn: "root"
-});
-var PositioningService = _PositioningService;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(PositioningService, [{
     type: Injectable,
@@ -1850,7 +1873,7 @@ var ComponentLoader = class {
     return new ContentRef([nodes]);
   }
 };
-var _ComponentLoaderFactory = class _ComponentLoaderFactory {
+var ComponentLoaderFactory = class _ComponentLoaderFactory {
   constructor(_componentFactoryResolver, _ngZone, _injector, _posService, _applicationRef, _document) {
     this._componentFactoryResolver = _componentFactoryResolver;
     this._ngZone = _ngZone;
@@ -1868,16 +1891,19 @@ var _ComponentLoaderFactory = class _ComponentLoaderFactory {
   createLoader(_elementRef, _viewContainerRef, _renderer) {
     return new ComponentLoader(_viewContainerRef, _renderer, _elementRef, this._injector, this._componentFactoryResolver, this._ngZone, this._applicationRef, this._posService, this._document);
   }
+  static {
+    this.ɵfac = function ComponentLoaderFactory_Factory(t) {
+      return new (t || _ComponentLoaderFactory)(ɵɵinject(ComponentFactoryResolver$1), ɵɵinject(NgZone), ɵɵinject(Injector), ɵɵinject(PositioningService), ɵɵinject(ApplicationRef), ɵɵinject(DOCUMENT));
+    };
+  }
+  static {
+    this.ɵprov = ɵɵdefineInjectable({
+      token: _ComponentLoaderFactory,
+      factory: _ComponentLoaderFactory.ɵfac,
+      providedIn: "root"
+    });
+  }
 };
-_ComponentLoaderFactory.ɵfac = function ComponentLoaderFactory_Factory(t) {
-  return new (t || _ComponentLoaderFactory)(ɵɵinject(ComponentFactoryResolver$1), ɵɵinject(NgZone), ɵɵinject(Injector), ɵɵinject(PositioningService), ɵɵinject(ApplicationRef), ɵɵinject(DOCUMENT));
-};
-_ComponentLoaderFactory.ɵprov = ɵɵdefineInjectable({
-  token: _ComponentLoaderFactory,
-  factory: _ComponentLoaderFactory.ɵfac,
-  providedIn: "root"
-});
-var ComponentLoaderFactory = _ComponentLoaderFactory;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(ComponentLoaderFactory, [{
     type: Injectable,
@@ -1905,21 +1931,24 @@ var ComponentLoaderFactory = _ComponentLoaderFactory;
 
 // node_modules/ngx-bootstrap/modal/fesm2022/ngx-bootstrap-modal.mjs
 var _c0 = ["*"];
-var _BsModalRef = class _BsModalRef {
+var BsModalRef = class _BsModalRef {
   constructor() {
     this.hide = () => void 0;
     this.setClass = () => void 0;
   }
+  static {
+    this.ɵfac = function BsModalRef_Factory(t) {
+      return new (t || _BsModalRef)();
+    };
+  }
+  static {
+    this.ɵprov = ɵɵdefineInjectable({
+      token: _BsModalRef,
+      factory: _BsModalRef.ɵfac,
+      providedIn: "platform"
+    });
+  }
 };
-_BsModalRef.ɵfac = function BsModalRef_Factory(t) {
-  return new (t || _BsModalRef)();
-};
-_BsModalRef.ɵprov = ɵɵdefineInjectable({
-  token: _BsModalRef,
-  factory: _BsModalRef.ɵfac,
-  providedIn: "platform"
-});
-var BsModalRef = _BsModalRef;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(BsModalRef, [{
     type: Injectable,
@@ -1934,17 +1963,20 @@ var ModalBackdropOptions = class {
     Object.assign(this, options);
   }
 };
-var _ModalOptions = class _ModalOptions {
+var ModalOptions = class _ModalOptions {
+  static {
+    this.ɵfac = function ModalOptions_Factory(t) {
+      return new (t || _ModalOptions)();
+    };
+  }
+  static {
+    this.ɵprov = ɵɵdefineInjectable({
+      token: _ModalOptions,
+      factory: _ModalOptions.ɵfac,
+      providedIn: "platform"
+    });
+  }
 };
-_ModalOptions.ɵfac = function ModalOptions_Factory(t) {
-  return new (t || _ModalOptions)();
-};
-_ModalOptions.ɵprov = ɵɵdefineInjectable({
-  token: _ModalOptions,
-  factory: _ModalOptions.ɵfac,
-  providedIn: "platform"
-});
-var ModalOptions = _ModalOptions;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(ModalOptions, [{
     type: Injectable,
@@ -1982,7 +2014,7 @@ var DISMISS_REASONS = {
   ESC: "esc",
   BACK: "browser-back-navigation-clicked"
 };
-var _ModalContainerComponent = class _ModalContainerComponent {
+var ModalContainerComponent = class _ModalContainerComponent {
   constructor(options, _element, _renderer) {
     this._element = _element;
     this._renderer = _renderer;
@@ -2074,50 +2106,53 @@ var _ModalContainerComponent = class _ModalContainerComponent {
       }
     }, this.isAnimated ? TRANSITION_DURATIONS.MODAL : 0);
   }
+  static {
+    this.ɵfac = function ModalContainerComponent_Factory(t) {
+      return new (t || _ModalContainerComponent)(ɵɵdirectiveInject(ModalOptions), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(Renderer2));
+    };
+  }
+  static {
+    this.ɵcmp = ɵɵdefineComponent({
+      type: _ModalContainerComponent,
+      selectors: [["modal-container"]],
+      hostAttrs: ["role", "dialog", "tabindex", "-1", 1, "modal"],
+      hostVars: 3,
+      hostBindings: function ModalContainerComponent_HostBindings(rf, ctx) {
+        if (rf & 1) {
+          ɵɵlistener("mousedown", function ModalContainerComponent_mousedown_HostBindingHandler($event) {
+            return ctx.onClickStarted($event);
+          })("click", function ModalContainerComponent_click_HostBindingHandler($event) {
+            return ctx.onClickStop($event);
+          })("popstate", function ModalContainerComponent_popstate_HostBindingHandler() {
+            return ctx.onPopState();
+          }, false, ɵɵresolveWindow)("keydown.esc", function ModalContainerComponent_keydown_esc_HostBindingHandler($event) {
+            return ctx.onEsc($event);
+          }, false, ɵɵresolveWindow);
+        }
+        if (rf & 2) {
+          ɵɵattribute("aria-modal", true)("aria-labelledby", ctx.config.ariaLabelledBy)("aria-describedby", ctx.config.ariaDescribedby);
+        }
+      },
+      ngContentSelectors: _c0,
+      decls: 3,
+      vars: 2,
+      consts: [["role", "document", "focusTrap", ""], [1, "modal-content"]],
+      template: function ModalContainerComponent_Template(rf, ctx) {
+        if (rf & 1) {
+          ɵɵprojectionDef();
+          ɵɵelementStart(0, "div", 0)(1, "div", 1);
+          ɵɵprojection(2);
+          ɵɵelementEnd()();
+        }
+        if (rf & 2) {
+          ɵɵclassMap("modal-dialog" + (ctx.config.class ? " " + ctx.config.class : ""));
+        }
+      },
+      dependencies: [FocusTrapDirective],
+      encapsulation: 2
+    });
+  }
 };
-_ModalContainerComponent.ɵfac = function ModalContainerComponent_Factory(t) {
-  return new (t || _ModalContainerComponent)(ɵɵdirectiveInject(ModalOptions), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(Renderer2));
-};
-_ModalContainerComponent.ɵcmp = ɵɵdefineComponent({
-  type: _ModalContainerComponent,
-  selectors: [["modal-container"]],
-  hostAttrs: ["role", "dialog", "tabindex", "-1", 1, "modal"],
-  hostVars: 3,
-  hostBindings: function ModalContainerComponent_HostBindings(rf, ctx) {
-    if (rf & 1) {
-      ɵɵlistener("mousedown", function ModalContainerComponent_mousedown_HostBindingHandler($event) {
-        return ctx.onClickStarted($event);
-      })("click", function ModalContainerComponent_click_HostBindingHandler($event) {
-        return ctx.onClickStop($event);
-      })("popstate", function ModalContainerComponent_popstate_HostBindingHandler() {
-        return ctx.onPopState();
-      }, false, ɵɵresolveWindow)("keydown.esc", function ModalContainerComponent_keydown_esc_HostBindingHandler($event) {
-        return ctx.onEsc($event);
-      }, false, ɵɵresolveWindow);
-    }
-    if (rf & 2) {
-      ɵɵattribute("aria-modal", true)("aria-labelledby", ctx.config.ariaLabelledBy)("aria-describedby", ctx.config.ariaDescribedby);
-    }
-  },
-  ngContentSelectors: _c0,
-  decls: 3,
-  vars: 2,
-  consts: [["role", "document", "focusTrap", ""], [1, "modal-content"]],
-  template: function ModalContainerComponent_Template(rf, ctx) {
-    if (rf & 1) {
-      ɵɵprojectionDef();
-      ɵɵelementStart(0, "div", 0)(1, "div", 1);
-      ɵɵprojection(2);
-      ɵɵelementEnd()();
-    }
-    if (rf & 2) {
-      ɵɵclassMap("modal-dialog" + (ctx.config.class ? " " + ctx.config.class : ""));
-    }
-  },
-  dependencies: [FocusTrapDirective],
-  encapsulation: 2
-});
-var ModalContainerComponent = _ModalContainerComponent;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(ModalContainerComponent, [{
     type: Component,
@@ -2167,7 +2202,7 @@ var ModalContainerComponent = _ModalContainerComponent;
     }]
   });
 })();
-var _ModalBackdropComponent = class _ModalBackdropComponent {
+var ModalBackdropComponent = class _ModalBackdropComponent {
   get isAnimated() {
     return this._isAnimated;
   }
@@ -2198,21 +2233,24 @@ var _ModalBackdropComponent = class _ModalBackdropComponent {
     }
     this.isShown = true;
   }
+  static {
+    this.ɵfac = function ModalBackdropComponent_Factory(t) {
+      return new (t || _ModalBackdropComponent)(ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(Renderer2));
+    };
+  }
+  static {
+    this.ɵcmp = ɵɵdefineComponent({
+      type: _ModalBackdropComponent,
+      selectors: [["bs-modal-backdrop"]],
+      hostAttrs: [1, "modal-backdrop"],
+      decls: 0,
+      vars: 0,
+      template: function ModalBackdropComponent_Template(rf, ctx) {
+      },
+      encapsulation: 2
+    });
+  }
 };
-_ModalBackdropComponent.ɵfac = function ModalBackdropComponent_Factory(t) {
-  return new (t || _ModalBackdropComponent)(ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(Renderer2));
-};
-_ModalBackdropComponent.ɵcmp = ɵɵdefineComponent({
-  type: _ModalBackdropComponent,
-  selectors: [["bs-modal-backdrop"]],
-  hostAttrs: [1, "modal-backdrop"],
-  decls: 0,
-  vars: 0,
-  template: function ModalBackdropComponent_Template(rf, ctx) {
-  },
-  encapsulation: 2
-});
-var ModalBackdropComponent = _ModalBackdropComponent;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(ModalBackdropComponent, [{
     type: Component,
@@ -2232,7 +2270,7 @@ var ModalBackdropComponent = _ModalBackdropComponent;
 })();
 var TRANSITION_DURATION = 300;
 var BACKDROP_TRANSITION_DURATION = 150;
-var _ModalDirective = class _ModalDirective {
+var ModalDirective = class _ModalDirective {
   /** allows to set modal configuration via element property */
   set config(conf) {
     this._config = this.getConfig(conf);
@@ -2518,37 +2556,40 @@ var _ModalDirective = class _ModalDirective {
     this._renderer.removeChild(document2.body, scrollDiv);
     return scrollbarWidth;
   }
+  static {
+    this.ɵfac = function ModalDirective_Factory(t) {
+      return new (t || _ModalDirective)(ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(ViewContainerRef), ɵɵdirectiveInject(Renderer2), ɵɵdirectiveInject(ComponentLoaderFactory), ɵɵdirectiveInject(MODAL_CONFIG_DEFAULT_OVERRIDE, 8));
+    };
+  }
+  static {
+    this.ɵdir = ɵɵdefineDirective({
+      type: _ModalDirective,
+      selectors: [["", "bsModal", ""]],
+      hostBindings: function ModalDirective_HostBindings(rf, ctx) {
+        if (rf & 1) {
+          ɵɵlistener("mousedown", function ModalDirective_mousedown_HostBindingHandler($event) {
+            return ctx.onClickStarted($event);
+          })("mouseup", function ModalDirective_mouseup_HostBindingHandler($event) {
+            return ctx.onClickStop($event);
+          })("keydown.esc", function ModalDirective_keydown_esc_HostBindingHandler($event) {
+            return ctx.onEsc($event);
+          });
+        }
+      },
+      inputs: {
+        config: "config",
+        closeInterceptor: "closeInterceptor"
+      },
+      outputs: {
+        onShow: "onShow",
+        onShown: "onShown",
+        onHide: "onHide",
+        onHidden: "onHidden"
+      },
+      exportAs: ["bs-modal"]
+    });
+  }
 };
-_ModalDirective.ɵfac = function ModalDirective_Factory(t) {
-  return new (t || _ModalDirective)(ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(ViewContainerRef), ɵɵdirectiveInject(Renderer2), ɵɵdirectiveInject(ComponentLoaderFactory), ɵɵdirectiveInject(MODAL_CONFIG_DEFAULT_OVERRIDE, 8));
-};
-_ModalDirective.ɵdir = ɵɵdefineDirective({
-  type: _ModalDirective,
-  selectors: [["", "bsModal", ""]],
-  hostBindings: function ModalDirective_HostBindings(rf, ctx) {
-    if (rf & 1) {
-      ɵɵlistener("mousedown", function ModalDirective_mousedown_HostBindingHandler($event) {
-        return ctx.onClickStarted($event);
-      })("mouseup", function ModalDirective_mouseup_HostBindingHandler($event) {
-        return ctx.onClickStop($event);
-      })("keydown.esc", function ModalDirective_keydown_esc_HostBindingHandler($event) {
-        return ctx.onEsc($event);
-      });
-    }
-  },
-  inputs: {
-    config: "config",
-    closeInterceptor: "closeInterceptor"
-  },
-  outputs: {
-    onShow: "onShow",
-    onShown: "onShown",
-    onHide: "onHide",
-    onHidden: "onHidden"
-  },
-  exportAs: ["bs-modal"]
-});
-var ModalDirective = _ModalDirective;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(ModalDirective, [{
     type: Directive,
@@ -2606,7 +2647,7 @@ var ModalDirective = _ModalDirective;
   });
 })();
 var currentId = 1;
-var _BsModalService = class _BsModalService {
+var BsModalService = class _BsModalService {
   constructor(rendererFactory, clf, modalDefaultOption) {
     this.clf = clf;
     this.modalDefaultOption = modalDefaultOption;
@@ -2793,16 +2834,19 @@ var _BsModalService = class _BsModalService {
       to.emit(this.lastDismissReason || data);
     });
   }
+  static {
+    this.ɵfac = function BsModalService_Factory(t) {
+      return new (t || _BsModalService)(ɵɵinject(RendererFactory2), ɵɵinject(ComponentLoaderFactory), ɵɵinject(MODAL_CONFIG_DEFAULT_OVERRIDE, 8));
+    };
+  }
+  static {
+    this.ɵprov = ɵɵdefineInjectable({
+      token: _BsModalService,
+      factory: _BsModalService.ɵfac,
+      providedIn: "platform"
+    });
+  }
 };
-_BsModalService.ɵfac = function BsModalService_Factory(t) {
-  return new (t || _BsModalService)(ɵɵinject(RendererFactory2), ɵɵinject(ComponentLoaderFactory), ɵɵinject(MODAL_CONFIG_DEFAULT_OVERRIDE, 8));
-};
-_BsModalService.ɵprov = ɵɵdefineInjectable({
-  token: _BsModalService,
-  factory: _BsModalService.ɵfac,
-  providedIn: "platform"
-});
-var BsModalService = _BsModalService;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(BsModalService, [{
     type: Injectable,
@@ -2824,7 +2868,7 @@ var BsModalService = _BsModalService;
   }], null);
 })();
 var focusTrapModule = FocusTrapModule.forRoot();
-var _ModalModule = class _ModalModule {
+var ModalModule = class _ModalModule {
   static forRoot() {
     return {
       ngModule: _ModalModule,
@@ -2837,20 +2881,25 @@ var _ModalModule = class _ModalModule {
       providers: [BsModalService, ComponentLoaderFactory, PositioningService]
     };
   }
+  static {
+    this.ɵfac = function ModalModule_Factory(t) {
+      return new (t || _ModalModule)();
+    };
+  }
+  static {
+    this.ɵmod = ɵɵdefineNgModule({
+      type: _ModalModule,
+      declarations: [ModalBackdropComponent, ModalDirective, ModalContainerComponent],
+      imports: [FocusTrapModule],
+      exports: [ModalBackdropComponent, ModalDirective]
+    });
+  }
+  static {
+    this.ɵinj = ɵɵdefineInjector({
+      imports: [FocusTrapModule]
+    });
+  }
 };
-_ModalModule.ɵfac = function ModalModule_Factory(t) {
-  return new (t || _ModalModule)();
-};
-_ModalModule.ɵmod = ɵɵdefineNgModule({
-  type: _ModalModule,
-  declarations: [ModalBackdropComponent, ModalDirective, ModalContainerComponent],
-  imports: [FocusTrapModule],
-  exports: [ModalBackdropComponent, ModalDirective]
-});
-_ModalModule.ɵinj = ɵɵdefineInjector({
-  imports: [FocusTrapModule]
-});
-var ModalModule = _ModalModule;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(ModalModule, [{
     type: NgModule,

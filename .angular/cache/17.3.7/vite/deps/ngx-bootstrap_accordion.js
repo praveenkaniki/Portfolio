@@ -2,12 +2,12 @@ import {
   AnimationBuilder,
   animate,
   style
-} from "./chunk-GZPDVHHW.js";
+} from "./chunk-TJB4HIQI.js";
 import {
   CommonModule,
   NgClass,
   NgIf
-} from "./chunk-SCEWNS7V.js";
+} from "./chunk-KGMLFK7B.js";
 import {
   Component,
   Directive,
@@ -41,7 +41,7 @@ import {
   ɵɵtemplate,
   ɵɵtext,
   ɵɵtextInterpolate1
-} from "./chunk-DZVXT4KU.js";
+} from "./chunk-XFZICENZ.js";
 
 // node_modules/ngx-bootstrap/collapse/fesm2022/ngx-bootstrap-collapse.mjs
 var COLLAPSE_ANIMATION_TIMING = "400ms cubic-bezier(0.4,0.0,0.2,1)";
@@ -59,7 +59,7 @@ var collapseAnimation = [style({
   height: 0,
   visibility: "hidden"
 }))];
-var _CollapseDirective = class _CollapseDirective {
+var CollapseDirective = class _CollapseDirective {
   set display(value) {
     this._display = value;
     if (value === "none") {
@@ -166,34 +166,37 @@ var _CollapseDirective = class _CollapseDirective {
     this._player.play();
     return (callback) => this._player?.onDone(callback);
   }
+  static {
+    this.ɵfac = function CollapseDirective_Factory(t) {
+      return new (t || _CollapseDirective)(ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(Renderer2), ɵɵdirectiveInject(AnimationBuilder));
+    };
+  }
+  static {
+    this.ɵdir = ɵɵdefineDirective({
+      type: _CollapseDirective,
+      selectors: [["", "collapse", ""]],
+      hostVars: 9,
+      hostBindings: function CollapseDirective_HostBindings(rf, ctx) {
+        if (rf & 2) {
+          ɵɵattribute("aria-hidden", ctx.isCollapsed);
+          ɵɵclassProp("collapse", ctx.isCollapse)("in", ctx.isExpanded)("show", ctx.isExpanded)("collapsing", ctx.isCollapsing);
+        }
+      },
+      inputs: {
+        display: "display",
+        isAnimated: "isAnimated",
+        collapse: "collapse"
+      },
+      outputs: {
+        collapsed: "collapsed",
+        collapses: "collapses",
+        expanded: "expanded",
+        expands: "expands"
+      },
+      exportAs: ["bs-collapse"]
+    });
+  }
 };
-_CollapseDirective.ɵfac = function CollapseDirective_Factory(t) {
-  return new (t || _CollapseDirective)(ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(Renderer2), ɵɵdirectiveInject(AnimationBuilder));
-};
-_CollapseDirective.ɵdir = ɵɵdefineDirective({
-  type: _CollapseDirective,
-  selectors: [["", "collapse", ""]],
-  hostVars: 9,
-  hostBindings: function CollapseDirective_HostBindings(rf, ctx) {
-    if (rf & 2) {
-      ɵɵattribute("aria-hidden", ctx.isCollapsed);
-      ɵɵclassProp("collapse", ctx.isCollapse)("in", ctx.isExpanded)("show", ctx.isExpanded)("collapsing", ctx.isCollapsing);
-    }
-  },
-  inputs: {
-    display: "display",
-    isAnimated: "isAnimated",
-    collapse: "collapse"
-  },
-  outputs: {
-    collapsed: "collapsed",
-    collapses: "collapses",
-    expanded: "expanded",
-    expands: "expands"
-  },
-  exportAs: ["bs-collapse"]
-});
-var CollapseDirective = _CollapseDirective;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(CollapseDirective, [{
     type: Directive,
@@ -254,24 +257,29 @@ var CollapseDirective = _CollapseDirective;
     }]
   });
 })();
-var _CollapseModule = class _CollapseModule {
+var CollapseModule = class _CollapseModule {
   static forRoot() {
     return {
       ngModule: _CollapseModule,
       providers: []
     };
   }
+  static {
+    this.ɵfac = function CollapseModule_Factory(t) {
+      return new (t || _CollapseModule)();
+    };
+  }
+  static {
+    this.ɵmod = ɵɵdefineNgModule({
+      type: _CollapseModule,
+      declarations: [CollapseDirective],
+      exports: [CollapseDirective]
+    });
+  }
+  static {
+    this.ɵinj = ɵɵdefineInjector({});
+  }
 };
-_CollapseModule.ɵfac = function CollapseModule_Factory(t) {
-  return new (t || _CollapseModule)();
-};
-_CollapseModule.ɵmod = ɵɵdefineNgModule({
-  type: _CollapseModule,
-  declarations: [CollapseDirective],
-  exports: [CollapseDirective]
-});
-_CollapseModule.ɵinj = ɵɵdefineInjector({});
-var CollapseModule = _CollapseModule;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(CollapseModule, [{
     type: NgModule,
@@ -302,21 +310,24 @@ function AccordionPanelComponent_button_4_Template(rf, ctx) {
     ɵɵtextInterpolate1(" ", ctx_r0.heading, " ");
   }
 }
-var _AccordionConfig = class _AccordionConfig {
+var AccordionConfig = class _AccordionConfig {
   constructor() {
     this.closeOthers = false;
     this.isAnimated = false;
   }
+  static {
+    this.ɵfac = function AccordionConfig_Factory(t) {
+      return new (t || _AccordionConfig)();
+    };
+  }
+  static {
+    this.ɵprov = ɵɵdefineInjectable({
+      token: _AccordionConfig,
+      factory: _AccordionConfig.ɵfac,
+      providedIn: "root"
+    });
+  }
 };
-_AccordionConfig.ɵfac = function AccordionConfig_Factory(t) {
-  return new (t || _AccordionConfig)();
-};
-_AccordionConfig.ɵprov = ɵɵdefineInjectable({
-  token: _AccordionConfig,
-  factory: _AccordionConfig.ɵfac,
-  providedIn: "root"
-});
-var AccordionConfig = _AccordionConfig;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(AccordionConfig, [{
     type: Injectable,
@@ -325,7 +336,7 @@ var AccordionConfig = _AccordionConfig;
     }]
   }], null, null);
 })();
-var _AccordionComponent = class _AccordionComponent {
+var AccordionComponent = class _AccordionComponent {
   constructor(config) {
     this.isAnimated = false;
     this.closeOthers = false;
@@ -352,36 +363,39 @@ var _AccordionComponent = class _AccordionComponent {
       this.groups.splice(index, 1);
     }
   }
+  static {
+    this.ɵfac = function AccordionComponent_Factory(t) {
+      return new (t || _AccordionComponent)(ɵɵdirectiveInject(AccordionConfig));
+    };
+  }
+  static {
+    this.ɵcmp = ɵɵdefineComponent({
+      type: _AccordionComponent,
+      selectors: [["accordion"]],
+      hostAttrs: ["role", "tablist", 1, "panel-group", 2, "display", "block"],
+      hostVars: 1,
+      hostBindings: function AccordionComponent_HostBindings(rf, ctx) {
+        if (rf & 2) {
+          ɵɵattribute("aria-multiselectable", ctx.closeOthers);
+        }
+      },
+      inputs: {
+        isAnimated: "isAnimated",
+        closeOthers: "closeOthers"
+      },
+      ngContentSelectors: _c0,
+      decls: 1,
+      vars: 0,
+      template: function AccordionComponent_Template(rf, ctx) {
+        if (rf & 1) {
+          ɵɵprojectionDef();
+          ɵɵprojection(0);
+        }
+      },
+      encapsulation: 2
+    });
+  }
 };
-_AccordionComponent.ɵfac = function AccordionComponent_Factory(t) {
-  return new (t || _AccordionComponent)(ɵɵdirectiveInject(AccordionConfig));
-};
-_AccordionComponent.ɵcmp = ɵɵdefineComponent({
-  type: _AccordionComponent,
-  selectors: [["accordion"]],
-  hostAttrs: ["role", "tablist", 1, "panel-group", 2, "display", "block"],
-  hostVars: 1,
-  hostBindings: function AccordionComponent_HostBindings(rf, ctx) {
-    if (rf & 2) {
-      ɵɵattribute("aria-multiselectable", ctx.closeOthers);
-    }
-  },
-  inputs: {
-    isAnimated: "isAnimated",
-    closeOthers: "closeOthers"
-  },
-  ngContentSelectors: _c0,
-  decls: 1,
-  vars: 0,
-  template: function AccordionComponent_Template(rf, ctx) {
-    if (rf & 1) {
-      ɵɵprojectionDef();
-      ɵɵprojection(0);
-    }
-  },
-  encapsulation: 2
-});
-var AccordionComponent = _AccordionComponent;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(AccordionComponent, [{
     type: Component,
@@ -407,7 +421,7 @@ var AccordionComponent = _AccordionComponent;
     }]
   });
 })();
-var _AccordionPanelComponent = class _AccordionPanelComponent {
+var AccordionPanelComponent = class _AccordionPanelComponent {
   // Questionable, maybe .panel-open should be on child div.panel element?
   /** Is accordion group open or closed. This property supports two-way binding */
   get isOpen() {
@@ -443,64 +457,67 @@ var _AccordionPanelComponent = class _AccordionPanelComponent {
       this.isOpen = !this.isOpen;
     }
   }
+  static {
+    this.ɵfac = function AccordionPanelComponent_Factory(t) {
+      return new (t || _AccordionPanelComponent)(ɵɵdirectiveInject(AccordionComponent));
+    };
+  }
+  static {
+    this.ɵcmp = ɵɵdefineComponent({
+      type: _AccordionPanelComponent,
+      selectors: [["accordion-group"], ["accordion-panel"]],
+      hostAttrs: [1, "panel", 2, "display", "block"],
+      hostVars: 2,
+      hostBindings: function AccordionPanelComponent_HostBindings(rf, ctx) {
+        if (rf & 2) {
+          ɵɵclassProp("panel-open", ctx.isOpen);
+        }
+      },
+      inputs: {
+        heading: "heading",
+        panelClass: "panelClass",
+        isDisabled: "isDisabled",
+        isOpen: "isOpen"
+      },
+      outputs: {
+        isOpenChange: "isOpenChange"
+      },
+      ngContentSelectors: _c2,
+      decls: 9,
+      vars: 6,
+      consts: [[1, "panel", "card", 3, "ngClass"], ["role", "tab", 1, "panel-heading", "card-header", 3, "click", "ngClass"], [1, "panel-title"], ["role", "button", 1, "accordion-toggle"], ["class", "btn btn-link", "type", "button", 3, "ngClass", 4, "ngIf"], ["role", "tabpanel", 1, "panel-collapse", "collapse", 3, "collapse", "isAnimated"], [1, "panel-body", "card-block", "card-body"], ["type", "button", 1, "btn", "btn-link", 3, "ngClass"]],
+      template: function AccordionPanelComponent_Template(rf, ctx) {
+        if (rf & 1) {
+          ɵɵprojectionDef(_c1);
+          ɵɵelementStart(0, "div", 0)(1, "div", 1);
+          ɵɵlistener("click", function AccordionPanelComponent_Template_div_click_1_listener() {
+            return ctx.toggleOpen();
+          });
+          ɵɵelementStart(2, "div", 2)(3, "div", 3);
+          ɵɵtemplate(4, AccordionPanelComponent_button_4_Template, 2, 4, "button", 4);
+          ɵɵprojection(5);
+          ɵɵelementEnd()()();
+          ɵɵelementStart(6, "div", 5)(7, "div", 6);
+          ɵɵprojection(8, 1);
+          ɵɵelementEnd()()();
+        }
+        if (rf & 2) {
+          ɵɵproperty("ngClass", ctx.panelClass);
+          ɵɵadvance();
+          ɵɵproperty("ngClass", ctx.isDisabled ? "panel-disabled" : "panel-enabled");
+          ɵɵadvance(2);
+          ɵɵattribute("aria-expanded", ctx.isOpen);
+          ɵɵadvance();
+          ɵɵproperty("ngIf", ctx.heading);
+          ɵɵadvance(2);
+          ɵɵproperty("collapse", !ctx.isOpen)("isAnimated", ctx.isAnimated);
+        }
+      },
+      dependencies: [NgClass, NgIf, CollapseDirective],
+      styles: ["[_nghost-%COMP%]   .card-header.panel-enabled[_ngcontent-%COMP%]{cursor:pointer}[_nghost-%COMP%]   .card-header.panel-disabled[_ngcontent-%COMP%]   .btn.btn-link[_ngcontent-%COMP%]{cursor:default;text-decoration:none}"]
+    });
+  }
 };
-_AccordionPanelComponent.ɵfac = function AccordionPanelComponent_Factory(t) {
-  return new (t || _AccordionPanelComponent)(ɵɵdirectiveInject(AccordionComponent));
-};
-_AccordionPanelComponent.ɵcmp = ɵɵdefineComponent({
-  type: _AccordionPanelComponent,
-  selectors: [["accordion-group"], ["accordion-panel"]],
-  hostAttrs: [1, "panel", 2, "display", "block"],
-  hostVars: 2,
-  hostBindings: function AccordionPanelComponent_HostBindings(rf, ctx) {
-    if (rf & 2) {
-      ɵɵclassProp("panel-open", ctx.isOpen);
-    }
-  },
-  inputs: {
-    heading: "heading",
-    panelClass: "panelClass",
-    isDisabled: "isDisabled",
-    isOpen: "isOpen"
-  },
-  outputs: {
-    isOpenChange: "isOpenChange"
-  },
-  ngContentSelectors: _c2,
-  decls: 9,
-  vars: 6,
-  consts: [[1, "panel", "card", 3, "ngClass"], ["role", "tab", 1, "panel-heading", "card-header", 3, "click", "ngClass"], [1, "panel-title"], ["role", "button", 1, "accordion-toggle"], ["class", "btn btn-link", "type", "button", 3, "ngClass", 4, "ngIf"], ["role", "tabpanel", 1, "panel-collapse", "collapse", 3, "collapse", "isAnimated"], [1, "panel-body", "card-block", "card-body"], ["type", "button", 1, "btn", "btn-link", 3, "ngClass"]],
-  template: function AccordionPanelComponent_Template(rf, ctx) {
-    if (rf & 1) {
-      ɵɵprojectionDef(_c1);
-      ɵɵelementStart(0, "div", 0)(1, "div", 1);
-      ɵɵlistener("click", function AccordionPanelComponent_Template_div_click_1_listener() {
-        return ctx.toggleOpen();
-      });
-      ɵɵelementStart(2, "div", 2)(3, "div", 3);
-      ɵɵtemplate(4, AccordionPanelComponent_button_4_Template, 2, 4, "button", 4);
-      ɵɵprojection(5);
-      ɵɵelementEnd()()();
-      ɵɵelementStart(6, "div", 5)(7, "div", 6);
-      ɵɵprojection(8, 1);
-      ɵɵelementEnd()()();
-    }
-    if (rf & 2) {
-      ɵɵproperty("ngClass", ctx.panelClass);
-      ɵɵadvance();
-      ɵɵproperty("ngClass", ctx.isDisabled ? "panel-disabled" : "panel-enabled");
-      ɵɵadvance(2);
-      ɵɵattribute("aria-expanded", ctx.isOpen);
-      ɵɵadvance();
-      ɵɵproperty("ngIf", ctx.heading);
-      ɵɵadvance(2);
-      ɵɵproperty("collapse", !ctx.isOpen)("isAnimated", ctx.isAnimated);
-    }
-  },
-  dependencies: [NgClass, NgIf, CollapseDirective],
-  styles: ["[_nghost-%COMP%]   .card-header.panel-enabled[_ngcontent-%COMP%]{cursor:pointer}[_nghost-%COMP%]   .card-header.panel-disabled[_ngcontent-%COMP%]   .btn.btn-link[_ngcontent-%COMP%]{cursor:default;text-decoration:none}"]
-});
-var AccordionPanelComponent = _AccordionPanelComponent;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(AccordionPanelComponent, [{
     type: Component,
@@ -562,27 +579,32 @@ var AccordionPanelComponent = _AccordionPanelComponent;
     }]
   });
 })();
-var _AccordionModule = class _AccordionModule {
+var AccordionModule = class _AccordionModule {
   static forRoot() {
     return {
       ngModule: _AccordionModule,
       providers: []
     };
   }
+  static {
+    this.ɵfac = function AccordionModule_Factory(t) {
+      return new (t || _AccordionModule)();
+    };
+  }
+  static {
+    this.ɵmod = ɵɵdefineNgModule({
+      type: _AccordionModule,
+      declarations: [AccordionComponent, AccordionPanelComponent],
+      imports: [CommonModule, CollapseModule],
+      exports: [AccordionComponent, AccordionPanelComponent]
+    });
+  }
+  static {
+    this.ɵinj = ɵɵdefineInjector({
+      imports: [CommonModule, CollapseModule]
+    });
+  }
 };
-_AccordionModule.ɵfac = function AccordionModule_Factory(t) {
-  return new (t || _AccordionModule)();
-};
-_AccordionModule.ɵmod = ɵɵdefineNgModule({
-  type: _AccordionModule,
-  declarations: [AccordionComponent, AccordionPanelComponent],
-  imports: [CommonModule, CollapseModule],
-  exports: [AccordionComponent, AccordionPanelComponent]
-});
-_AccordionModule.ɵinj = ɵɵdefineInjector({
-  imports: [CommonModule, CollapseModule]
-});
-var AccordionModule = _AccordionModule;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(AccordionModule, [{
     type: NgModule,

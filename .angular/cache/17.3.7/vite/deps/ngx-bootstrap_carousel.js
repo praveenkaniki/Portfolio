@@ -8,7 +8,7 @@ import {
   NgIf,
   NgStyle,
   isPlatformBrowser
-} from "./chunk-SCEWNS7V.js";
+} from "./chunk-KGMLFK7B.js";
 import {
   Component,
   EventEmitter,
@@ -46,7 +46,7 @@ import {
   ɵɵstyleProp,
   ɵɵtemplate,
   ɵɵtext
-} from "./chunk-DZVXT4KU.js";
+} from "./chunk-XFZICENZ.js";
 
 // node_modules/ngx-bootstrap/carousel/fesm2022/ngx-bootstrap-carousel.mjs
 var _c0 = ["*"];
@@ -156,7 +156,7 @@ function CarouselComponent_a_6_Template(rf, ctx) {
     ɵɵattribute("data-bs-target", "#carousel" + ctx_r2.currentId);
   }
 }
-var _CarouselConfig = class _CarouselConfig {
+var CarouselConfig = class _CarouselConfig {
   constructor() {
     this.interval = 5e3;
     this.noPause = false;
@@ -167,16 +167,19 @@ var _CarouselConfig = class _CarouselConfig {
     this.itemsPerSlide = 1;
     this.singleSlideOffset = false;
   }
+  static {
+    this.ɵfac = function CarouselConfig_Factory(t) {
+      return new (t || _CarouselConfig)();
+    };
+  }
+  static {
+    this.ɵprov = ɵɵdefineInjectable({
+      token: _CarouselConfig,
+      factory: _CarouselConfig.ɵfac,
+      providedIn: "root"
+    });
+  }
 };
-_CarouselConfig.ɵfac = function CarouselConfig_Factory(t) {
-  return new (t || _CarouselConfig)();
-};
-_CarouselConfig.ɵprov = ɵɵdefineInjectable({
-  token: _CarouselConfig,
-  factory: _CarouselConfig.ɵfac,
-  providedIn: "root"
-});
-var CarouselConfig = _CarouselConfig;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(CarouselConfig, [{
     type: Injectable,
@@ -215,7 +218,7 @@ var Direction;
   Direction2[Direction2["PREV"] = 2] = "PREV";
 })(Direction || (Direction = {}));
 var _currentId = 1;
-var _CarouselComponent = class _CarouselComponent {
+var CarouselComponent = class _CarouselComponent {
   /** Index of currently displayed slide(started for 0) */
   set activeSlide(index) {
     if (this.multilist) {
@@ -784,76 +787,79 @@ var _CarouselComponent = class _CarouselComponent {
     }
     return this.isLast(this.activeSlide) && this.noWrap && !this.multilist || this.isLastSlideVisible && this.noWrap && this.multilist;
   }
+  static {
+    this.ɵfac = function CarouselComponent_Factory(t) {
+      return new (t || _CarouselComponent)(ɵɵdirectiveInject(CarouselConfig), ɵɵdirectiveInject(NgZone), ɵɵdirectiveInject(PLATFORM_ID));
+    };
+  }
+  static {
+    this.ɵcmp = ɵɵdefineComponent({
+      type: _CarouselComponent,
+      selectors: [["carousel"]],
+      inputs: {
+        noWrap: "noWrap",
+        noPause: "noPause",
+        showIndicators: "showIndicators",
+        pauseOnFocus: "pauseOnFocus",
+        indicatorsByChunk: "indicatorsByChunk",
+        itemsPerSlide: "itemsPerSlide",
+        singleSlideOffset: "singleSlideOffset",
+        isAnimated: "isAnimated",
+        activeSlide: "activeSlide",
+        startFromIndex: "startFromIndex",
+        interval: "interval"
+      },
+      outputs: {
+        activeSlideChange: "activeSlideChange",
+        slideRangeChange: "slideRangeChange"
+      },
+      ngContentSelectors: _c0,
+      decls: 7,
+      vars: 8,
+      consts: [["tabindex", "0", 1, "carousel", "slide", 3, "mouseenter", "mouseleave", "mouseup", "keydown", "focusin", "focusout", "id"], [4, "ngIf"], [1, "carousel-inner", 3, "ngStyle"], ["class", "left carousel-control carousel-control-prev", "href", "javascript:void(0);", "tabindex", "0", "role", "button", 3, "disabled", "click", 4, "ngIf"], ["class", "right carousel-control carousel-control-next", "href", "javascript:void(0);", "tabindex", "0", "role", "button", 3, "disabled", "click", 4, "ngIf"], [1, "carousel-indicators"], [3, "active", "click", 4, "ngFor", "ngForOf"], [3, "click"], ["type", "button", "aria-current", "true", 3, "active", "click", 4, "ngFor", "ngForOf"], ["type", "button", "aria-current", "true", 3, "click"], ["href", "javascript:void(0);", "tabindex", "0", "role", "button", 1, "left", "carousel-control", "carousel-control-prev", 3, "click"], ["aria-hidden", "true", 1, "icon-prev", "carousel-control-prev-icon"], [1, "sr-only", "visually-hidden"], ["href", "javascript:void(0);", "tabindex", "0", "role", "button", 1, "right", "carousel-control", "carousel-control-next", 3, "click"], ["aria-hidden", "true", 1, "icon-next", "carousel-control-next-icon"]],
+      template: function CarouselComponent_Template(rf, ctx) {
+        if (rf & 1) {
+          ɵɵprojectionDef();
+          ɵɵelementStart(0, "div", 0);
+          ɵɵlistener("mouseenter", function CarouselComponent_Template_div_mouseenter_0_listener() {
+            return ctx.pause();
+          })("mouseleave", function CarouselComponent_Template_div_mouseleave_0_listener() {
+            return ctx.onMouseLeave();
+          })("mouseup", function CarouselComponent_Template_div_mouseup_0_listener() {
+            return ctx.onMouseUp();
+          })("keydown", function CarouselComponent_Template_div_keydown_0_listener($event) {
+            return ctx.keydownPress($event);
+          })("focusin", function CarouselComponent_Template_div_focusin_0_listener() {
+            return ctx.pauseFocusIn();
+          })("focusout", function CarouselComponent_Template_div_focusout_0_listener() {
+            return ctx.pauseFocusOut();
+          });
+          ɵɵtemplate(1, CarouselComponent_ng_container_1_Template, 3, 1, "ng-container", 1)(2, CarouselComponent_ng_container_2_Template, 3, 1, "ng-container", 1);
+          ɵɵelementStart(3, "div", 2);
+          ɵɵprojection(4);
+          ɵɵelementEnd();
+          ɵɵtemplate(5, CarouselComponent_a_5_Template, 4, 3, "a", 3)(6, CarouselComponent_a_6_Template, 4, 3, "a", 4);
+          ɵɵelementEnd();
+        }
+        if (rf & 2) {
+          ɵɵproperty("id", "carousel" + ctx.currentId);
+          ɵɵadvance();
+          ɵɵproperty("ngIf", !ctx._bsVer.isBs5 && ctx.showIndicators && ctx.slides.length > 1);
+          ɵɵadvance();
+          ɵɵproperty("ngIf", ctx._bsVer.isBs5 && ctx.showIndicators && ctx.slides.length > 1);
+          ɵɵadvance();
+          ɵɵproperty("ngStyle", ɵɵpureFunction1(6, _c1, ctx.multilist ? "flex" : "block"));
+          ɵɵadvance(2);
+          ɵɵproperty("ngIf", ctx.slides.length > 1);
+          ɵɵadvance();
+          ɵɵproperty("ngIf", ctx.slides.length > 1);
+        }
+      },
+      dependencies: [NgForOf, NgIf, NgStyle],
+      encapsulation: 2
+    });
+  }
 };
-_CarouselComponent.ɵfac = function CarouselComponent_Factory(t) {
-  return new (t || _CarouselComponent)(ɵɵdirectiveInject(CarouselConfig), ɵɵdirectiveInject(NgZone), ɵɵdirectiveInject(PLATFORM_ID));
-};
-_CarouselComponent.ɵcmp = ɵɵdefineComponent({
-  type: _CarouselComponent,
-  selectors: [["carousel"]],
-  inputs: {
-    noWrap: "noWrap",
-    noPause: "noPause",
-    showIndicators: "showIndicators",
-    pauseOnFocus: "pauseOnFocus",
-    indicatorsByChunk: "indicatorsByChunk",
-    itemsPerSlide: "itemsPerSlide",
-    singleSlideOffset: "singleSlideOffset",
-    isAnimated: "isAnimated",
-    activeSlide: "activeSlide",
-    startFromIndex: "startFromIndex",
-    interval: "interval"
-  },
-  outputs: {
-    activeSlideChange: "activeSlideChange",
-    slideRangeChange: "slideRangeChange"
-  },
-  ngContentSelectors: _c0,
-  decls: 7,
-  vars: 8,
-  consts: [["tabindex", "0", 1, "carousel", "slide", 3, "mouseenter", "mouseleave", "mouseup", "keydown", "focusin", "focusout", "id"], [4, "ngIf"], [1, "carousel-inner", 3, "ngStyle"], ["class", "left carousel-control carousel-control-prev", "href", "javascript:void(0);", "tabindex", "0", "role", "button", 3, "disabled", "click", 4, "ngIf"], ["class", "right carousel-control carousel-control-next", "href", "javascript:void(0);", "tabindex", "0", "role", "button", 3, "disabled", "click", 4, "ngIf"], [1, "carousel-indicators"], [3, "active", "click", 4, "ngFor", "ngForOf"], [3, "click"], ["type", "button", "aria-current", "true", 3, "active", "click", 4, "ngFor", "ngForOf"], ["type", "button", "aria-current", "true", 3, "click"], ["href", "javascript:void(0);", "tabindex", "0", "role", "button", 1, "left", "carousel-control", "carousel-control-prev", 3, "click"], ["aria-hidden", "true", 1, "icon-prev", "carousel-control-prev-icon"], [1, "sr-only", "visually-hidden"], ["href", "javascript:void(0);", "tabindex", "0", "role", "button", 1, "right", "carousel-control", "carousel-control-next", 3, "click"], ["aria-hidden", "true", 1, "icon-next", "carousel-control-next-icon"]],
-  template: function CarouselComponent_Template(rf, ctx) {
-    if (rf & 1) {
-      ɵɵprojectionDef();
-      ɵɵelementStart(0, "div", 0);
-      ɵɵlistener("mouseenter", function CarouselComponent_Template_div_mouseenter_0_listener() {
-        return ctx.pause();
-      })("mouseleave", function CarouselComponent_Template_div_mouseleave_0_listener() {
-        return ctx.onMouseLeave();
-      })("mouseup", function CarouselComponent_Template_div_mouseup_0_listener() {
-        return ctx.onMouseUp();
-      })("keydown", function CarouselComponent_Template_div_keydown_0_listener($event) {
-        return ctx.keydownPress($event);
-      })("focusin", function CarouselComponent_Template_div_focusin_0_listener() {
-        return ctx.pauseFocusIn();
-      })("focusout", function CarouselComponent_Template_div_focusout_0_listener() {
-        return ctx.pauseFocusOut();
-      });
-      ɵɵtemplate(1, CarouselComponent_ng_container_1_Template, 3, 1, "ng-container", 1)(2, CarouselComponent_ng_container_2_Template, 3, 1, "ng-container", 1);
-      ɵɵelementStart(3, "div", 2);
-      ɵɵprojection(4);
-      ɵɵelementEnd();
-      ɵɵtemplate(5, CarouselComponent_a_5_Template, 4, 3, "a", 3)(6, CarouselComponent_a_6_Template, 4, 3, "a", 4);
-      ɵɵelementEnd();
-    }
-    if (rf & 2) {
-      ɵɵproperty("id", "carousel" + ctx.currentId);
-      ɵɵadvance();
-      ɵɵproperty("ngIf", !ctx._bsVer.isBs5 && ctx.showIndicators && ctx.slides.length > 1);
-      ɵɵadvance();
-      ɵɵproperty("ngIf", ctx._bsVer.isBs5 && ctx.showIndicators && ctx.slides.length > 1);
-      ɵɵadvance();
-      ɵɵproperty("ngStyle", ɵɵpureFunction1(6, _c1, ctx.multilist ? "flex" : "block"));
-      ɵɵadvance(2);
-      ɵɵproperty("ngIf", ctx.slides.length > 1);
-      ɵɵadvance();
-      ɵɵproperty("ngIf", ctx.slides.length > 1);
-    }
-  },
-  dependencies: [NgForOf, NgIf, NgStyle],
-  encapsulation: 2
-});
-var CarouselComponent = _CarouselComponent;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(CarouselComponent, [{
     type: Component,
@@ -967,7 +973,7 @@ var CarouselComponent = _CarouselComponent;
     }]
   });
 })();
-var _SlideComponent = class _SlideComponent {
+var SlideComponent = class _SlideComponent {
   constructor(carousel) {
     this.active = false;
     this.itemWidth = "100%";
@@ -987,42 +993,45 @@ var _SlideComponent = class _SlideComponent {
   ngOnDestroy() {
     this.carousel.removeSlide(this);
   }
+  static {
+    this.ɵfac = function SlideComponent_Factory(t) {
+      return new (t || _SlideComponent)(ɵɵdirectiveInject(CarouselComponent));
+    };
+  }
+  static {
+    this.ɵcmp = ɵɵdefineComponent({
+      type: _SlideComponent,
+      selectors: [["slide"]],
+      hostVars: 15,
+      hostBindings: function SlideComponent_HostBindings(rf, ctx) {
+        if (rf & 2) {
+          ɵɵattribute("aria-hidden", !ctx.active);
+          ɵɵstyleProp("width", ctx.itemWidth)("order", ctx.order);
+          ɵɵclassProp("multilist-margin", ctx.multilist)("active", ctx.active)("carousel-animation", ctx.isAnimated)("item", ctx.addClass)("carousel-item", ctx.addClass);
+        }
+      },
+      inputs: {
+        active: "active"
+      },
+      ngContentSelectors: _c0,
+      decls: 2,
+      vars: 2,
+      consts: [[1, "item"]],
+      template: function SlideComponent_Template(rf, ctx) {
+        if (rf & 1) {
+          ɵɵprojectionDef();
+          ɵɵelementStart(0, "div", 0);
+          ɵɵprojection(1);
+          ɵɵelementEnd();
+        }
+        if (rf & 2) {
+          ɵɵclassProp("active", ctx.active);
+        }
+      },
+      styles: [".carousel-animation[_nghost-%COMP%]{transition:opacity .6s ease,visibility .6s ease;float:left}.carousel-animation.active[_nghost-%COMP%]{opacity:1;visibility:visible}.carousel-animation[_nghost-%COMP%]:not(.active){display:block;position:absolute;opacity:0;visibility:hidden}.multilist-margin[_nghost-%COMP%]{margin-right:auto}.carousel-item[_nghost-%COMP%]{perspective:1000px}"]
+    });
+  }
 };
-_SlideComponent.ɵfac = function SlideComponent_Factory(t) {
-  return new (t || _SlideComponent)(ɵɵdirectiveInject(CarouselComponent));
-};
-_SlideComponent.ɵcmp = ɵɵdefineComponent({
-  type: _SlideComponent,
-  selectors: [["slide"]],
-  hostVars: 15,
-  hostBindings: function SlideComponent_HostBindings(rf, ctx) {
-    if (rf & 2) {
-      ɵɵattribute("aria-hidden", !ctx.active);
-      ɵɵstyleProp("width", ctx.itemWidth)("order", ctx.order);
-      ɵɵclassProp("multilist-margin", ctx.multilist)("active", ctx.active)("carousel-animation", ctx.isAnimated)("item", ctx.addClass)("carousel-item", ctx.addClass);
-    }
-  },
-  inputs: {
-    active: "active"
-  },
-  ngContentSelectors: _c0,
-  decls: 2,
-  vars: 2,
-  consts: [[1, "item"]],
-  template: function SlideComponent_Template(rf, ctx) {
-    if (rf & 1) {
-      ɵɵprojectionDef();
-      ɵɵelementStart(0, "div", 0);
-      ɵɵprojection(1);
-      ɵɵelementEnd();
-    }
-    if (rf & 2) {
-      ɵɵclassProp("active", ctx.active);
-    }
-  },
-  styles: [".carousel-animation[_nghost-%COMP%]{transition:opacity .6s ease,visibility .6s ease;float:left}.carousel-animation.active[_nghost-%COMP%]{opacity:1;visibility:visible}.carousel-animation[_nghost-%COMP%]:not(.active){display:block;position:absolute;opacity:0;visibility:hidden}.multilist-margin[_nghost-%COMP%]{margin-right:auto}.carousel-item[_nghost-%COMP%]{perspective:1000px}"]
-});
-var SlideComponent = _SlideComponent;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(SlideComponent, [{
     type: Component,
@@ -1069,27 +1078,32 @@ var SlideComponent = _SlideComponent;
     }]
   });
 })();
-var _CarouselModule = class _CarouselModule {
+var CarouselModule = class _CarouselModule {
   static forRoot() {
     return {
       ngModule: _CarouselModule,
       providers: []
     };
   }
+  static {
+    this.ɵfac = function CarouselModule_Factory(t) {
+      return new (t || _CarouselModule)();
+    };
+  }
+  static {
+    this.ɵmod = ɵɵdefineNgModule({
+      type: _CarouselModule,
+      declarations: [SlideComponent, CarouselComponent],
+      imports: [CommonModule],
+      exports: [SlideComponent, CarouselComponent]
+    });
+  }
+  static {
+    this.ɵinj = ɵɵdefineInjector({
+      imports: [CommonModule]
+    });
+  }
 };
-_CarouselModule.ɵfac = function CarouselModule_Factory(t) {
-  return new (t || _CarouselModule)();
-};
-_CarouselModule.ɵmod = ɵɵdefineNgModule({
-  type: _CarouselModule,
-  declarations: [SlideComponent, CarouselComponent],
-  imports: [CommonModule],
-  exports: [SlideComponent, CarouselComponent]
-});
-_CarouselModule.ɵinj = ɵɵdefineInjector({
-  imports: [CommonModule]
-});
-var CarouselModule = _CarouselModule;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(CarouselModule, [{
     type: NgModule,

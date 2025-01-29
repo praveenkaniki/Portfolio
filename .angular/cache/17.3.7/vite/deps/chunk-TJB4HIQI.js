@@ -1,6 +1,6 @@
 import {
   DOCUMENT
-} from "./chunk-SCEWNS7V.js";
+} from "./chunk-KGMLFK7B.js";
 import {
   ANIMATION_MODULE_TYPE,
   Inject,
@@ -12,7 +12,7 @@ import {
   setClassMetadata,
   ɵɵdefineInjectable,
   ɵɵinject
-} from "./chunk-DZVXT4KU.js";
+} from "./chunk-XFZICENZ.js";
 
 // node_modules/@angular/animations/fesm2022/animations.mjs
 var AnimationMetadataType;
@@ -53,17 +53,20 @@ function style(tokens) {
     offset: null
   };
 }
-var _AnimationBuilder = class _AnimationBuilder {
+var AnimationBuilder = class _AnimationBuilder {
+  static {
+    this.ɵfac = function AnimationBuilder_Factory(t) {
+      return new (t || _AnimationBuilder)();
+    };
+  }
+  static {
+    this.ɵprov = ɵɵdefineInjectable({
+      token: _AnimationBuilder,
+      factory: () => (() => inject(BrowserAnimationBuilder))(),
+      providedIn: "root"
+    });
+  }
 };
-_AnimationBuilder.ɵfac = function AnimationBuilder_Factory(t) {
-  return new (t || _AnimationBuilder)();
-};
-_AnimationBuilder.ɵprov = ɵɵdefineInjectable({
-  token: _AnimationBuilder,
-  factory: () => (() => inject(BrowserAnimationBuilder))(),
-  providedIn: "root"
-});
-var AnimationBuilder = _AnimationBuilder;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(AnimationBuilder, [{
     type: Injectable,
@@ -75,7 +78,7 @@ var AnimationBuilder = _AnimationBuilder;
 })();
 var AnimationFactory = class {
 };
-var _BrowserAnimationBuilder = class _BrowserAnimationBuilder extends AnimationBuilder {
+var BrowserAnimationBuilder = class _BrowserAnimationBuilder extends AnimationBuilder {
   constructor(rootRenderer, doc) {
     super();
     this.animationModuleType = inject(ANIMATION_MODULE_TYPE, {
@@ -102,16 +105,19 @@ var _BrowserAnimationBuilder = class _BrowserAnimationBuilder extends AnimationB
     issueAnimationCommand(this._renderer, null, id, "register", [entry]);
     return new BrowserAnimationFactory(id, this._renderer);
   }
+  static {
+    this.ɵfac = function BrowserAnimationBuilder_Factory(t) {
+      return new (t || _BrowserAnimationBuilder)(ɵɵinject(RendererFactory2), ɵɵinject(DOCUMENT));
+    };
+  }
+  static {
+    this.ɵprov = ɵɵdefineInjectable({
+      token: _BrowserAnimationBuilder,
+      factory: _BrowserAnimationBuilder.ɵfac,
+      providedIn: "root"
+    });
+  }
 };
-_BrowserAnimationBuilder.ɵfac = function BrowserAnimationBuilder_Factory(t) {
-  return new (t || _BrowserAnimationBuilder)(ɵɵinject(RendererFactory2), ɵɵinject(DOCUMENT));
-};
-_BrowserAnimationBuilder.ɵprov = ɵɵdefineInjectable({
-  token: _BrowserAnimationBuilder,
-  factory: _BrowserAnimationBuilder.ɵfac,
-  providedIn: "root"
-});
-var BrowserAnimationBuilder = _BrowserAnimationBuilder;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(BrowserAnimationBuilder, [{
     type: Injectable,
@@ -453,4 +459,4 @@ export {
    * License: MIT
    *)
 */
-//# sourceMappingURL=chunk-GZPDVHHW.js.map
+//# sourceMappingURL=chunk-TJB4HIQI.js.map

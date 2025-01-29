@@ -6,7 +6,7 @@ import {
   sequence,
   style,
   ɵPRE_STYLE
-} from "./chunk-GZPDVHHW.js";
+} from "./chunk-TJB4HIQI.js";
 import {
   Injectable,
   RuntimeError,
@@ -14,7 +14,7 @@ import {
   __spreadValues,
   setClassMetadata,
   ɵɵdefineInjectable
-} from "./chunk-DZVXT4KU.js";
+} from "./chunk-XFZICENZ.js";
 
 // node_modules/@angular/animations/fesm2022/browser.mjs
 var LINE_START = "\n - ";
@@ -275,7 +275,7 @@ function invokeQuery(element, selector, multi) {
   const elem = element.querySelector(selector);
   return elem ? [elem] : [];
 }
-var _NoopAnimationDriver = class _NoopAnimationDriver {
+var NoopAnimationDriver = class _NoopAnimationDriver {
   /**
    * @returns Whether `prop` is a valid CSS property
    */
@@ -320,24 +320,28 @@ var _NoopAnimationDriver = class _NoopAnimationDriver {
   animate(element, keyframes, duration, delay, easing, previousPlayers = [], scrubberAccessRequested) {
     return new NoopAnimationPlayer(duration, delay);
   }
+  static {
+    this.ɵfac = function NoopAnimationDriver_Factory(t) {
+      return new (t || _NoopAnimationDriver)();
+    };
+  }
+  static {
+    this.ɵprov = ɵɵdefineInjectable({
+      token: _NoopAnimationDriver,
+      factory: _NoopAnimationDriver.ɵfac
+    });
+  }
 };
-_NoopAnimationDriver.ɵfac = function NoopAnimationDriver_Factory(t) {
-  return new (t || _NoopAnimationDriver)();
-};
-_NoopAnimationDriver.ɵprov = ɵɵdefineInjectable({
-  token: _NoopAnimationDriver,
-  factory: _NoopAnimationDriver.ɵfac
-});
-var NoopAnimationDriver = _NoopAnimationDriver;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NoopAnimationDriver, [{
     type: Injectable
   }], null, null);
 })();
-var _AnimationDriver = class _AnimationDriver {
+var AnimationDriver = class {
+  static {
+    this.NOOP = new NoopAnimationDriver();
+  }
 };
-_AnimationDriver.NOOP = new NoopAnimationDriver();
-var AnimationDriver = _AnimationDriver;
 var AnimationStyleNormalizer = class {
 };
 var NoopAnimationStyleNormalizer = class {
@@ -3483,7 +3487,10 @@ function packageNonAnimatableStyles(element, styles) {
   }
   return startStyles || endStyles ? new SpecialCasedStyles(element, startStyles, endStyles) : null;
 }
-var _SpecialCasedStyles = class _SpecialCasedStyles {
+var SpecialCasedStyles = class _SpecialCasedStyles {
+  static {
+    this.initialStylesByElement = /* @__PURE__ */ new WeakMap();
+  }
   constructor(_element, _startStyles, _endStyles) {
     this._element = _element;
     this._startStyles = _startStyles;
@@ -3531,8 +3538,6 @@ var _SpecialCasedStyles = class _SpecialCasedStyles {
     }
   }
 };
-_SpecialCasedStyles.initialStylesByElement = /* @__PURE__ */ new WeakMap();
-var SpecialCasedStyles = _SpecialCasedStyles;
 function filterNonAnimatableStyles(styles) {
   let result = null;
   styles.forEach((val, prop) => {
@@ -4058,4 +4063,4 @@ export {
    * License: MIT
    *)
 */
-//# sourceMappingURL=chunk-UPUK53GP.js.map
+//# sourceMappingURL=chunk-5M7W7LCA.js.map

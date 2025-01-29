@@ -6,15 +6,15 @@ import {
   NoopAnimationDriver,
   WebAnimationsDriver,
   WebAnimationsStyleNormalizer
-} from "./chunk-UPUK53GP.js";
-import "./chunk-GZPDVHHW.js";
+} from "./chunk-5M7W7LCA.js";
+import "./chunk-TJB4HIQI.js";
 import {
   BrowserModule,
   DomRendererFactory2
-} from "./chunk-435YMJBS.js";
+} from "./chunk-BOHLP7XJ.js";
 import {
   DOCUMENT
-} from "./chunk-SCEWNS7V.js";
+} from "./chunk-KGMLFK7B.js";
 import {
   ANIMATION_MODULE_TYPE,
   ChangeDetectionScheduler,
@@ -30,10 +30,10 @@ import {
   ɵɵdefineInjector,
   ɵɵdefineNgModule,
   ɵɵinject
-} from "./chunk-DZVXT4KU.js";
+} from "./chunk-XFZICENZ.js";
 
 // node_modules/@angular/platform-browser/fesm2022/animations.mjs
-var _InjectableAnimationEngine = class _InjectableAnimationEngine extends AnimationEngine {
+var InjectableAnimationEngine = class _InjectableAnimationEngine extends AnimationEngine {
   // The `ApplicationRef` is injected here explicitly to force the dependency ordering.
   // Since the `ApplicationRef` should be created earlier before the `AnimationEngine`, they
   // both have `ngOnDestroy` hooks and `flush()` must be called after all views are destroyed.
@@ -45,15 +45,18 @@ var _InjectableAnimationEngine = class _InjectableAnimationEngine extends Animat
   ngOnDestroy() {
     this.flush();
   }
+  static {
+    this.ɵfac = function InjectableAnimationEngine_Factory(t) {
+      return new (t || _InjectableAnimationEngine)(ɵɵinject(DOCUMENT), ɵɵinject(AnimationDriver), ɵɵinject(AnimationStyleNormalizer));
+    };
+  }
+  static {
+    this.ɵprov = ɵɵdefineInjectable({
+      token: _InjectableAnimationEngine,
+      factory: _InjectableAnimationEngine.ɵfac
+    });
+  }
 };
-_InjectableAnimationEngine.ɵfac = function InjectableAnimationEngine_Factory(t) {
-  return new (t || _InjectableAnimationEngine)(ɵɵinject(DOCUMENT), ɵɵinject(AnimationDriver), ɵɵinject(AnimationStyleNormalizer));
-};
-_InjectableAnimationEngine.ɵprov = ɵɵdefineInjectable({
-  token: _InjectableAnimationEngine,
-  factory: _InjectableAnimationEngine.ɵfac
-});
-var InjectableAnimationEngine = _InjectableAnimationEngine;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(InjectableAnimationEngine, [{
     type: Injectable
@@ -100,7 +103,7 @@ var BROWSER_NOOP_ANIMATIONS_PROVIDERS = [{
   provide: ANIMATION_MODULE_TYPE,
   useValue: "NoopAnimations"
 }, ...SHARED_ANIMATION_PROVIDERS];
-var _BrowserAnimationsModule = class _BrowserAnimationsModule {
+var BrowserAnimationsModule = class _BrowserAnimationsModule {
   /**
    * Configures the module based on the specified object.
    *
@@ -123,19 +126,24 @@ var _BrowserAnimationsModule = class _BrowserAnimationsModule {
       providers: config.disableAnimations ? BROWSER_NOOP_ANIMATIONS_PROVIDERS : BROWSER_ANIMATIONS_PROVIDERS
     };
   }
+  static {
+    this.ɵfac = function BrowserAnimationsModule_Factory(t) {
+      return new (t || _BrowserAnimationsModule)();
+    };
+  }
+  static {
+    this.ɵmod = ɵɵdefineNgModule({
+      type: _BrowserAnimationsModule,
+      exports: [BrowserModule]
+    });
+  }
+  static {
+    this.ɵinj = ɵɵdefineInjector({
+      providers: BROWSER_ANIMATIONS_PROVIDERS,
+      imports: [BrowserModule]
+    });
+  }
 };
-_BrowserAnimationsModule.ɵfac = function BrowserAnimationsModule_Factory(t) {
-  return new (t || _BrowserAnimationsModule)();
-};
-_BrowserAnimationsModule.ɵmod = ɵɵdefineNgModule({
-  type: _BrowserAnimationsModule,
-  exports: [BrowserModule]
-});
-_BrowserAnimationsModule.ɵinj = ɵɵdefineInjector({
-  providers: BROWSER_ANIMATIONS_PROVIDERS,
-  imports: [BrowserModule]
-});
-var BrowserAnimationsModule = _BrowserAnimationsModule;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(BrowserAnimationsModule, [{
     type: NgModule,
@@ -149,20 +157,25 @@ function provideAnimations() {
   performanceMarkFeature("NgEagerAnimations");
   return [...BROWSER_ANIMATIONS_PROVIDERS];
 }
-var _NoopAnimationsModule = class _NoopAnimationsModule {
+var NoopAnimationsModule = class _NoopAnimationsModule {
+  static {
+    this.ɵfac = function NoopAnimationsModule_Factory(t) {
+      return new (t || _NoopAnimationsModule)();
+    };
+  }
+  static {
+    this.ɵmod = ɵɵdefineNgModule({
+      type: _NoopAnimationsModule,
+      exports: [BrowserModule]
+    });
+  }
+  static {
+    this.ɵinj = ɵɵdefineInjector({
+      providers: BROWSER_NOOP_ANIMATIONS_PROVIDERS,
+      imports: [BrowserModule]
+    });
+  }
 };
-_NoopAnimationsModule.ɵfac = function NoopAnimationsModule_Factory(t) {
-  return new (t || _NoopAnimationsModule)();
-};
-_NoopAnimationsModule.ɵmod = ɵɵdefineNgModule({
-  type: _NoopAnimationsModule,
-  exports: [BrowserModule]
-});
-_NoopAnimationsModule.ɵinj = ɵɵdefineInjector({
-  providers: BROWSER_NOOP_ANIMATIONS_PROVIDERS,
-  imports: [BrowserModule]
-});
-var NoopAnimationsModule = _NoopAnimationsModule;
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NoopAnimationsModule, [{
     type: NgModule,
